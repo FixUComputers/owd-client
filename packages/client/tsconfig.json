@@ -17,6 +17,7 @@
     "rootDir": ".",
     "types": [
       "@types/jest",
+      "vite/client",
       "webpack-env"
     ],
     "paths": {

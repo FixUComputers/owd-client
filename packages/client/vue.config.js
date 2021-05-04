@@ -15,7 +15,7 @@ module.exports = {
     loaderOptions: {
       scss: {
         additionalData:
-          `@import "@/assets/themes/${process.env.VUE_APP_THEME}/variables.scss";`,
+          `@import "@/assets/themes/${import.meta.env.VUE_APP_THEME}/variables.scss";`,
       }
     }
   },

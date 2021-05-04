@@ -50,7 +50,7 @@ export default abstract class ModuleApp implements OwdModuleApp {
 
   static isModuleSource(moduleName: string): boolean {
     try {
-      require(`@/../src/modules/${moduleName}/module.json`)
+      import(`@/../src/modules/${moduleName}/module.json`)
       return true
     } catch(e) {
       return false
@@ -58,7 +58,7 @@ export default abstract class ModuleApp implements OwdModuleApp {
   }
 
   static getModuleFile(module: any, moduleFile: string) {
-    return require(`@/../src/modules/${module.name}/${moduleFile}`)
+    return import(`@/../src/modules/${module.name}/${moduleFile}`)
 
     /*
     todo try to fix this
@@ -319,9 +319,9 @@ export default abstract class ModuleApp implements OwdModuleApp {
     if (this.moduleInfo.config) {
       try {
         if (ModuleApp.isModuleSource(this.moduleInfo.name)) {
-          return require('@/../config/' + this.moduleInfo.name + '/config.json')
+          return import('@/../config/' + this.moduleInfo.name + '/config.json')
         } else {
-          return require(this.moduleInfo.name + '/client/config.json')
+          return import(this.moduleInfo.name + '/client/config.json')
         }
       } catch(e) {
         console.error(`[OWD] Unable to load "/modules/${this.moduleInfo.name}/config.json"`, e)

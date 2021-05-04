@@ -20,7 +20,7 @@
 </template>
 
 <script setup>
-  import Window from "@owd-client/core/src/components/window/Window";
+  import Window from "@owd-client/core/src/components/window/Window.vue";
 
   import {defineProps} from 'vue'
   import {useStore} from "vuex";

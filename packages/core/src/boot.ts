@@ -103,10 +103,10 @@ export default class OwdBoot implements Boot {
    */
   initializeAssets(app: App) {
     // import app core styles
-    require('./assets/css/app.scss')
+    import('./assets/css/app.scss')
 
     // import app custom styles from owd-client
-    require('@/assets/css/app.scss')
+    import('@/assets/css/app.scss')
 
     // load custom theme styles
     // todo during build, ${app.config.owd.theme} isn't correct and it imports the default theme
@@ -120,9 +120,9 @@ export default class OwdBoot implements Boot {
     */
 
     // import Oswald font with typeface
-    require('@fontsource/cantarell')
-    require('@fontsource/oswald')
-    require('@fontsource/jetbrains-mono')
+    import('@fontsource/cantarell')
+    import('@fontsource/oswald')
+    import('@fontsource/jetbrains-mono')
 
     // assign vuetify config to $vuetify
     // Vue.prototype.$vuetify = this.config.vuetify

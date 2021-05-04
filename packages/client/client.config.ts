@@ -5,22 +5,20 @@ import routesMain from '@/pages/main/routes'
 import modulesConfig from '@/../config/modules.json'
 
 // import mdi icons fpr vuetify
-import '@mdi/font/css/materialdesignicons.css'
+//import '@mdi/font/css/materialdesignicons.css'
+
 // @ts-ignore
 import { aliases, mdi } from 'vuetify/lib/iconsets/mdi.mjs'
 
-// types
-import {OwdClientConfiguration} from '@owd-client/types'
-
 // todo fix this import in boot.ts during `npm run build`
 // (with `npm run serve` it works correctly)
-require(`@/assets/themes/${process.env.VUE_APP_THEME}/app.scss`)
+import(`@/assets/themes/default/app.scss`)
 
 export default {
   debug: false,
 
   // owd theme
-  theme: process.env.VUE_APP_THEME,
+  theme: import.meta.env.VUE_APP_THEME,
 
   // owd routes
   routes: [
@@ -76,7 +74,7 @@ export default {
           }
         }
       }
-    },
+    }
   },
 
   // owd icons
@@ -110,7 +108,7 @@ export default {
             primary: '#4987c1',
             secondary: '#b0bec5',
             accent: '#8c9eff',
-            error: '#b71c1c',
+            error: '#b71c1c'
           }
         },
         dark: {
@@ -118,10 +116,10 @@ export default {
             primary: '#4987c1',
             secondary: '#b0bec5',
             accent: '#8c9eff',
-            error: '#b71c1c',
+            error: '#b71c1c'
           }
-        },
-      },
+        }
+      }
     },
     icons: {
       defaultSet: 'mdi',
@@ -132,4 +130,4 @@ export default {
     },
     rtl: false
   }
-} as OwdClientConfiguration
+}
